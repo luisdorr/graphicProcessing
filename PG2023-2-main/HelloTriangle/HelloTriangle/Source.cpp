@@ -124,10 +124,14 @@ int main()
 		glBindVertexArray(VAO); //Conectando ao buffer de geometria
 
 		glUniform4f(colorLoc, 0.0f, 0.0f, 1.0f, 1.0f); //enviando cor para variável uniform inputColor
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+
+		glUniform4f(colorLoc, 1.0f, 0.0f, 0.0f, 1.0f); // Cor vermelha
+		glDrawArrays(GL_TRIANGLES, 3, 3);
 
 		// Chamada de desenho - drawcall
 		// Poligono Preenchido - GL_TRIANGLES
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		//glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		glBindVertexArray(0); //Desconectando o buffer de geometria
 
@@ -211,9 +215,12 @@ int setupGeometry()
 	// Pode ser arazenado em um VBO único ou em VBOs separados
 	GLfloat vertices[] = {
 		//x   y     z
-		-0.5, -0.5, 0.0, //v0
-		 0.5, -0.5, 0.0, //v1
- 		 0.0,  0.5, 0.0, //v2 
+		0.0,  0.0, 0.0, //v0
+	   -0.25, 0.5, 0.0, //v1
+	   -0.5,  0.0, 0.0, //v2 
+		0.1,  0.0, 0.0, //v3
+	   -0.15, 0.5, 0.0, //v4
+		0.35, 0.5, 0.0, //v5
 	};
 
 	GLuint VBO, VAO;
