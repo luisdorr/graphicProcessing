@@ -49,7 +49,6 @@ int setupGeometry()
 }
 
 ```
-<img src = img/circulo>
 
 To create spirals, we just need to switch so that our radius increases as a function of theta:
 ```C++
@@ -84,7 +83,6 @@ int setupGeometry()
 	return VAO;
 }
 ```
-<img src = img/espiral>
 Pac-Man
 
 ```c++
@@ -189,7 +187,7 @@ int setupGeometry()
 
 ```
 
-Estrela
+Star
 ```c++
 int setupGeometry()
 {
