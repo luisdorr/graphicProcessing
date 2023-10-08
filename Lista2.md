@@ -6,7 +6,7 @@ Para alterar os limetes do nosso mundo, basta alterar nossa projeção com o **_
 ```c++
 glm::mat4 projection = glm::ortho(-10.0, 10.0, -10.0, 10.0, -1.0, 1.0);
 ```
-<img src = "img/Lista2/q1.png">
+<img src = "img/lista2/q1.png">
 
 
 ##### Questão 2 - Agora modifique para: xmin=0, xmax=800, ymin=600, ymax=0. 
