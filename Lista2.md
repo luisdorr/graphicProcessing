@@ -24,7 +24,7 @@ glm::mat4 projection = glm::ortho(0.0, 800.0, 600.0, 0.0, -1.0, 1.0);
 > especificadas. Por exemplo, se você definir a janela do mundo para xmin=0, xmax=800, ymin=600, ymax=0, então o ponto
 > (0,0) será o canto superior esquerdo da janela e o ponto (800,600) será o canto inferior direito.
 
-<img src = "img/Lista2/q3.png">
+<img src = "img/lista2/q3.png">
 
 > Essa configuração é útil porque permite que você posicione objetos de maneira intuitiva com base nas dimensões da
 > janela, sem ter o impacto da resolução ou proporção. No entanto, é importante notar que a posição e a orientação dos
@@ -39,7 +39,7 @@ Só é preciso passar a simensão pelo **_glViewport_**:
 ```c++
 glViewport(width / 2, height / 2, width / 2, height / 2);
 ```
-<img src = "img/Lista2/q4.png">
+<img src = "img/lista2/q4.png">
 
 
 ##### Questão 5 - Agora, desenhe a mesma cena nos 4 quadrantes:
@@ -59,7 +59,7 @@ glViewport(width / 2, 0, width / 2, height / 2);
 // Dimensiona a viewport - Inferior Esquerdo
 glViewport(0, 0, width / 2, height / 2);
 ```
-<img src = "img/Lista2/q5.png">
+<img src = "img/lista2/q5.png">
 
 
 Codigo final da atividade:
