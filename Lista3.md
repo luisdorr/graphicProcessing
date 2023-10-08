@@ -60,7 +60,7 @@ while (!glfwWindowShouldClose(window))
 }
 ```
 
-<img src = img/lista3/q1>
+<img src = img/lista3/q1.png>
 
 
 ##### Questão 2 - Crie uma cena composta de quadrados coloridos dispostos em grid, como o exemplo abaixo:
@@ -88,4 +88,4 @@ for (int i = 0; i < 8; ++i) {
 	}
 }
 ```
-<img src = img/lista3/q2>
+<img src = img/lista3/epilepsia.gif>
