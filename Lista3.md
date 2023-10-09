@@ -92,7 +92,9 @@ for (int i = 0; i < 8; ++i) {
 
 
 
-#### Questão 3 -
+#### Questão 3 - Altere a posição de uma geometria nas 4 direções (cima,
+baixo, esquerda e direita) utilizando comandos de teclado para o controle (WASD ou
+setas).
 
 ##### Movimentação 
 Source.cpp
@@ -150,7 +152,9 @@ void Sprite::moveDown()
 	position.y -= vel;
 }
 ```
+
 ###### Figura
+Sprite.cpp
 ```c++
 this->nAnimations = nAnimations;
 this->nFrames = nFrames;
