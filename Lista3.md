@@ -1,7 +1,7 @@
 # Lista 3 - Transformações em Objetos 
 
-##### Questão 1 - Desenhe uma mesma geometria 3 vezes na tela, aplicando transformações diferentes 
-##### (mesmo VAO, matrizes de transformações diferentes, 3 chamadas de desenho).
+#### Questão 1 - Desenhe uma mesma geometria 3 vezes na tela, aplicando transformações diferentes 
+#### (mesmo VAO, matrizes de transformações diferentes, 3 chamadas de desenho).
 
 *loop de execução:*
 ```c++
@@ -63,7 +63,7 @@ while (!glfwWindowShouldClose(window))
 <img src = img/lista3/q1.png>
 
 
-##### Questão 2 - Crie uma cena composta de quadrados coloridos dispostos em grid, como o exemplo abaixo:
+#### Questão 2 - Crie uma cena composta de quadrados coloridos dispostos em grid, como o exemplo abaixo:
 
 Neste caso, basta criar um for que vai montando as imagens de acordo com o point of view.
 Eu optei por fazer um grid 8x8, com cores que vão trocando com o tempo.
@@ -89,3 +89,90 @@ for (int i = 0; i < 8; ++i) {
 }
 ```
 <img src = img/lista3/epilepsia.gif>
+
+
+
+#### Questão 3 -
+
+##### Movimentação 
+Source.cpp
+```c++
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
+{
+	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, GL_TRUE);
+
+	if (key == GLFW_KEY_A || key == GLFW_KEY_LEFT)
+	{
+		faca.setState(MOVING_LEFT);
+		faca.moveLeft();
+	}
+	else if (key == GLFW_KEY_D || key == GLFW_KEY_RIGHT)
+	{
+		faca.setState(MOVING_RIGHT);
+		faca.moveRight();
+	}
+	else if (key == GLFW_KEY_W || key == GLFW_KEY_UP)
+	{
+		faca.setState(MOVING_UP);
+		faca.moveUp();
+	}
+	else if (key == GLFW_KEY_S || key == GLFW_KEY_DOWN)
+	{
+		faca.setState(MOVING_DOWN);
+		faca.moveDown();
+	}
+	if (action == GLFW_RELEASE) //soltou a tecla
+	{
+		faca.setState(IDLE);
+	}
+}
+```
+Sprite.cpp
+```c++
+void Sprite::moveLeft()
+{
+	position.x -= vel;
+}
+
+void Sprite::moveRight()
+{
+	position.x += vel;
+}
+
+void Sprite::moveUp()
+{
+	position.y += vel;
+}
+
+void Sprite::moveDown()
+{
+	position.y -= vel;
+}
+```
+###### Figura
+```c++
+this->nAnimations = nAnimations;
+this->nFrames = nFrames;
+ds = 1.0 / (float)nFrames;
+dt = 1.0 / (float)nAnimations;
+iFrame = 0;
+iAnimation = 0;
+
+GLfloat vertices[] = {
+	//Primeiro Triângulo
+	// Lâmina da faca
+	 0.4f, 0.0f, 0.0f, 0.0, 0.0, //v0
+	 1.5f, 0.0f, 0.0f, ds, dt, //v1
+	 0.4f, -0.3f, 0.0f, 0.0, dt, //v2
+	// Cabo
+	 0.4f,  -0.15f, 0.0f, 0.0, 0.0,
+	-0.2f,  -0.15f, 0.0f, ds, dt,
+	-0.2f,  -0.00f, 0.0f, 0.0, dt,
+	-0.2f,  -0.00f, 0.0f, 0.0, 0.0,
+	 0.4f,  -0.00f, 0.0f, ds, dt,
+	 0.4f,  -0.15f, 0.0f, 0.0, dt,
+};
+```
+<img src = img/lista3/faca.gif>
+
